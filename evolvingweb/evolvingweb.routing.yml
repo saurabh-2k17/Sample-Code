@@ -1,0 +1,7 @@
+evolvingweb.getapi:
+  path: '/page/get-api/{auth}/{nid}'
+  defaults:
+    _title: ''
+    _controller: '\Drupal\evolvingweb\Controller\CommonController::getApi'
+  requirements:
+    _permission: 'access content'

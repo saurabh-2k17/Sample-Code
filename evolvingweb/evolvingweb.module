@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Contains a form_id alter to change the submit button text.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+function evolvingweb_form_system_site_information_settings_alter(&$form, $form_state) {
+  $siteApiKey = $form['site_info']['siteapikey']['#default_value'];
+  if (isset($siteApiKey) && ($siteApiKey != 'No API Key yet')) {
+    $form['actions']['submit']['#value'] = t('Update configuration');
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function evolvingweb_uninstall() {
+  // Clear the value of previously set Site API Key configuration.
+  \Drupal::configFactory()->getEditable('system.site')->clear('siteapikey')->save(TRUE);
+}

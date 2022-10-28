@@ -1,0 +1,6 @@
+name: Evolving Web
+type: module
+description: 'Custom module for Evolving Web interview process.'
+core_version_requirement: ^9
+package: Custom
+configure: system.site_information_settings

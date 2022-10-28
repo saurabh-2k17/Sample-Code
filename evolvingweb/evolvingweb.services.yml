@@ -1,0 +1,5 @@
+services:
+  evolvingweb.route_subscriber:
+    class: Drupal\evolvingweb\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
